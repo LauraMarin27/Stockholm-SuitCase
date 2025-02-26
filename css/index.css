@@ -1,0 +1,291 @@
+
+/* Reset */
+:root {
+  font-size: 100%;
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+*::before,
+*::after {
+  display: block;
+}
+img,
+picture,
+video,
+iframe,
+figure,
+canvas {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: initial;
+  object-fit: cover;
+  object-position: center center;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+p a {
+  display: inline;
+}
+li,
+menu,
+summary {
+  list-style-type: none;
+}
+ol {
+  counter-reset: revert;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em,
+pre,
+code,
+mark,
+del {
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+mark {
+  background-color: transparent;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: none;
+}
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  appearance: none;
+}
+fieldset {
+  border: none;
+}
+::placeholder {
+  color: unset;
+}
+button,
+label {
+  cursor: pointer;
+}
+table,
+tr,
+td,
+th,
+tbody,
+thead,
+tfoot {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: inherit;
+}
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5em;
+  color: inherit;
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Para que la imagen siempre ocupe el 100% del contenedor tanto de ancho como de largo */
+img {
+  height: 100%;
+}
+
+.Header {
+  display: flex;
+  width: 100%;
+  padding: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+  .Header-nav {
+    .Header-ul {
+      display: flex;
+      gap: 5rem;
+
+      .Header-li{
+        text-transform: uppercase;
+        border: solid black 1px;
+      }
+    }
+  }
+}
+.Main {
+  .Wrapper {
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: .3125rem;
+    .Wrapper-img--hoja {
+      grid-row: span 2;
+    }
+    .Wrapper-img--dos {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .Wrapper-img--numeros {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .Wrapper-img--nature {
+      grid-row: span 2;
+    }
+    .Wrapper-img-vow {
+      grid-column: span 2;
+    }
+  }
+}
+
+.Footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 50vh;
+    width: 40%;
+    
+    
+    margin: auto;
+
+    .Footer-first{
+        .Footer-logo {
+           width: 30%;
+            margin: 1.875rem auto 1.25rem auto;
+            
+          }
+          .Footer-p{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+          }
+
+    }
+   
+  
+  .Footer-copy{
+    display: flex;
+    gap: .1875rem;
+
+    .Footer-interactive{
+        border: solid 1px black;
+    }
+  }
+}
+
+
+/* Responsive  */
+@media (max-width: 800px) {
+    .Footer {
+        width: 80%;
+        .Footer-first {
+            .Footer-p {
+               width: 100%;
+            }
+        }
+    }
+    
+}
+
+
+@media (max-width: 576px) {
+    .Header {
+        .Header-nav {
+            .Header-ul {
+                display: none;
+                
+            }
+        }
+    }
+
+    .Main {
+      .Wrapper {
+          
+          grid-template-columns: repeat(2, 1fr);
+          gap: .3125rem;
+  
+          .Wrapper-img--hoja{
+          
+            grid-column: span 1;
+          }
+          .Wrapper-img--dos{
+            grid-row: span 1;
+            grid-column: span 1;
+  
+          }
+  
+          .Wrapper-img--numeros {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+  
+      }
+  }
+
+    .Footer {
+        width: 80%;
+        .Footer-first {
+            .Footer-p {
+               width: 100%;
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 480px) {
+  .Main {
+    .Wrapper {
+      grid-template-columns:  1fr;
+
+    
+        
+       
+
+    }
+}
+  
+}
